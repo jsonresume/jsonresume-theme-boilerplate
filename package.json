@@ -1,0 +1,19 @@
+{
+  "name": "jsonresume-theme-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate theme for JSON Resume",
+  "author": "Mattias Erming",
+  "main": "index.js",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erming/jsonresume-theme-boilerplate"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^2.0.0-alpha.4",
+    "resume-schema": "0.0.11"
+  }
+}
