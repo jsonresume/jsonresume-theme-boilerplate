@@ -1,5 +1,269 @@
 <!doctype html>
 <html>
 	<head></head>
-	<body>Hello, world.</body>
+	<body>
+	
+	{{#basics}}
+	<section id="basics">
+		{{#name}}
+		<div class="name">
+			{{.}}
+		</div>
+		{{/name}}
+		{{#email}}
+		<div class="email">
+			{{.}}
+		</div>
+		{{/email}}
+		{{#phone}}
+		<div class="phone">
+			{{.}}
+		</div>
+		{{/phone}}
+		{{#summary}}
+		<div class="summary">
+			{{.}}
+		</div>
+		{{/summary}}
+		{{#location}}
+		<section id="location">
+			{{#address}}
+			<div class="address">
+				{{.}}
+			</div>
+			{{/address}}
+			{{#postalCode}}
+			<div class="postalCode">
+				{{.}}
+			</div>
+			{{/postalCode}}
+			{{#city}}
+			<div class="city">
+				{{.}}
+			</div>
+			{{/city}}
+			{{#countryCode}}
+			<div class="countryCode">
+				{{.}}
+			</div>
+			{{/countryCode}}
+			{{#region}}
+			<div class="region">
+				{{.}}
+			</div>
+			{{/region}}
+		</section>
+		{{/location}}
+		{{#website}}
+		<div class="website">
+			{{.}}
+		</div>
+		{{/website}}
+		{{#if profiles.length}}
+		<section id="profiles">
+			{{#profiles}}
+			<div class="item">
+				{{#network}}
+				<div class="network">
+					{{.}}
+				</div>
+				{{/network}}
+				{{#username}}
+				<div class="username">
+					{{.}}
+				</div>
+				{{/username}}
+				{{#url}}
+				<div class="url">
+					{{.}}
+				</div>
+				{{/url}}
+			</div>
+			{{/profiles}}
+		</section>
+		{{/if}}
+	</section>
+	{{/basics}}
+
+	{{#if work.length}}
+	<section id="work">
+		{{#work}}
+		<div class="item">
+			{{#startDate}}
+			<div class="startDate">
+				{{.}}
+			</div>
+			{{/startDate}}
+			{{#endDate}}
+			<div class="endDate">
+				{{.}}
+			</div>
+			{{/endDate}}
+			{{#position}}
+			<div class="position">
+				{{.}}
+			</div>
+			{{/position}}
+			{{#website}}
+			<div class="website">
+				<a href="{{.}}">{{.}}</a>
+			</div>
+			{{/website}}
+			{{#summary}}
+			<div class="summary">
+				{{.}}
+			</div>
+			{{/summary}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#highlights}}
+				<li>{{.}}</li>
+				{{/highlights}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/work}}
+	</section>
+	{{/if}}
+	
+	{{#if education.length}}
+	<section id="education">
+		{{#education}}
+		<div class="item">
+			{{#startDate}}
+			<div class="startDate">
+				{{.}}
+			</div>
+			{{/startDate}}
+			{{#endDate}}
+			<div class="endDate">
+				{{.}}
+			</div>
+			{{/endDate}}
+			{{#institution}}
+			<div class="institution">
+				{{.}}
+			</div>
+			{{/institution}}
+			{{#area}}
+			<div class="area">
+				{{.}}
+			</div>
+			{{/area}}
+			{{#studyType}}
+			<div class="studyType">
+				{{.}}
+			</div>
+			{{/studyType}}
+			{{#if courses.length}}
+			<ul class="courses">
+				{{#courses}}
+				<li>{{.}}</li>
+				{{/courses}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/education}}
+	</section>
+	{{/if}}
+	
+	{{#if awards.length}}
+	<section id="awards">
+		{{#awards}}
+		<div class="item">
+			{{#title}}
+			<div class="title">
+				{{.}}
+			</div>
+			{{/title}}
+			{{#date}}
+			<div class="date">
+				{{.}}
+			</div>
+			{{/date}}
+			{{#awarder}}
+			<div class="awarder">
+				{{.}}
+			</div>
+			{{/awarder}}
+		</div>
+		{{/awards}}
+	</section>
+	{{/if}}
+	
+	{{#if publications.length}}
+	<section id="publications">
+		{{#publications}}
+		<div class="item">
+			{{#name}}
+			<div class="name">
+				{{.}}
+			</div>
+			{{/name}}
+			{{#publisher}}
+			<div class="publisher">
+				{{.}}
+			</div>
+			{{/publisher}}
+			{{#releaseDate}}
+			<div class="releaseDate">
+				{{.}}
+			</div>
+			{{/releaseDate}}
+			{{#website}}
+			<div class="website">
+				<a href="{{.}}">{{.}}</a>
+			</div>
+			{{/website}}
+		</div>
+		{{/publications}}
+	</section>
+	{{/if}}
+	
+	{{#if skills.length}}
+	<section id="skills">
+		{{#skills}}
+		<div class="item">
+			{{#name}}
+			<div class="name">
+				{{.}}
+			</div>
+			{{/name}}
+			{{#level}}
+			<div class="level">
+				{{.}}
+			</div>
+			{{/level}}
+			{{#if keywords.length}}
+			<ul class="keywords">
+				{{#keywords}}
+				<li>{{.}}</li>
+				{{/keywords}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/skills}}
+	</section>
+	{{/if}}
+	
+	{{#if references.length}}
+	<section id="references">
+		{{#references}}
+		<div class="item">
+			{{#name}}
+			<div class="name">
+				{{.}}
+			</div>
+			{{/name}}
+			{{#reference}}
+			<div class="reference">
+				{{.}}
+			</div>
+			{{/reference}}
+		</div>
+		{{/references}}
+	</section>
+	{{/if}}
+	
+	</body>
 </html>
