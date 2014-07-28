@@ -29,3 +29,7 @@ Go ahead and install it:
 ```
 npm install -g resume-cli
 ```
+
+## License
+
+Available under [the MIT license](http://mths.be/mit).
