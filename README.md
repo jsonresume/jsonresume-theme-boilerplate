@@ -1,11 +1,10 @@
-# Boilerplate theme
+# Boilerplate theme [![NPM version](https://badge.fury.io/js/jsonresume-theme-boilerplate.png)](https://www.npmjs.org/package/jsonresume-theme-boilerplate)
 
 This is the boilerplate theme for [JSON Resume](http://jsonresume.org/).
 
 ## Getting started
 
 To get started with theme development, this is what you'll need:
-
 
 - [node.js](http://http://howtonode.org/how-to-install-nodejs)
 - [npm](http://howtonode.org/introduction-to-npm)
