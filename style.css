@@ -1,7 +1,31 @@
 body {
 	background: #fff;
 	font: 15px Arial, Helvetica, sans-serif;
+	margin: 50px 0;
+	margin-bottom: 100px;
 }
 p {
 	line-height: 1.4;
+}
+section {
+	margin-bottom: 2em;
+}
+.item + .item {
+	margin-top: 1em;
+}
+#resume {
+	margin: 0 auto;
+	max-width: 640px;
+	padding: 0 20px;
+}
+#resume .label {
+	float: left;
+	width: 100px;
+}
+#basics h3 {
+	margin-top: 1.5em;
+}
+#references blockquote {
+	margin: 0;
+	margin-bottom: 1em;
 }

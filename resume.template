@@ -3,6 +3,8 @@
 	<head>
 	
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style type="text/css">
@@ -12,70 +14,78 @@
 	</head>
 	<body>
 	
+	<div id="resume">
+
 	{{#resume.basics}}
+	<h1>{{name}}</h1>
 	<section id="basics">
-		{{#name}}
-		<div class="name">
-			{{.}}
-		</div>
-		{{/name}}
 		{{#email}}
 		<div class="email">
+			<span class="label">Email:</span>
 			{{.}}
 		</div>
 		{{/email}}
 		{{#phone}}
 		<div class="phone">
+			<span class="label">Phone:</span>
 			{{.}}
 		</div>
 		{{/phone}}
+		{{#website}}
+		<div class="website">
+			<span class="label">Website:</span>
+			{{.}}
+		</div>
+		{{/website}}
 		{{#summary}}
 		<div class="summary">
 			<p>{{.}}</p>
 		</div>
 		{{/summary}}
 		{{#location}}
+		<h3>Location</h3>
 		<section id="location">
 			{{#address}}
 			<div class="address">
+				<span class="label">Address:</span>
 				{{.}}
 			</div>
 			{{/address}}
 			{{#postalCode}}
 			<div class="postalCode">
+				<span class="label">Postal code:</span>
 				{{.}}
 			</div>
 			{{/postalCode}}
 			{{#city}}
 			<div class="city">
+				<span class="label">City:</span>
 				{{.}}
 			</div>
 			{{/city}}
 			{{#countryCode}}
 			<div class="countryCode">
+				<span class="label">Country code:</span>
 				{{.}}
 			</div>
 			{{/countryCode}}
 			{{#region}}
 			<div class="region">
+				<span class="label">Region</span>
 				{{.}}
 			</div>
 			{{/region}}
 		</section>
 		{{/location}}
-		{{#website}}
-		<div class="website">
-			{{.}}
-		</div>
-		{{/website}}
 		{{#if profiles.length}}
+		<h3>Profiles</h3>
 		<section id="profiles">
 			{{#profiles}}
 			<div class="item">
 				{{#network}}
-				<div class="network">
+				<strong class="network">
 					{{.}}
-				</div>
+				</strong>
 				{{/network}}
 				{{#username}}
 				<div class="username">
@@ -84,7 +94,7 @@
 				{{/username}}
 				{{#url}}
 				<div class="url">
-					{{.}}
+					<a href="{{.}}">{{.}}</a>
 				</div>
 				{{/url}}
 			</div>
@@ -95,19 +105,27 @@
 	{{/resume.basics}}
 
 	{{#if resume.work.length}}
+	<h2>Work</h2>
 	<section id="work">
-		{{#each work}}
+		{{#each resume.work}}
 		<div class="item">
-			{{#startDate}}
-			<div class="startDate">
+			{{#company}}
+			<h3 class="name">
 				{{.}}
+			</h3>
+			{{/company}}
+			<div class="date">
+				{{#startDate}}
+				<span class="startDate">
+					{{.}}
+				</span>
+				{{/startDate}}
+				{{#endDate}}
+				<span class="endDate">
+					{{.}}
+				</span>
+				{{/endDate}}
 			</div>
-			{{/startDate}}
-			{{#endDate}}
-			<div class="endDate">
-				{{.}}
-			</div>
-			{{/endDate}}
 			{{#position}}
 			<div class="position">
 				{{.}}
@@ -136,19 +154,26 @@
 	{{/if}}
 	
 	{{#if resume.education.length}}
+	<h2>Education</h2>
 	<section id="education">
 		{{#each resume.education}}
 		<div class="item">
-			{{#startDate}}
-			<div class="startDate">
-				{{.}}
+			<div class="date">
+				{{#startDate}}
+				<span class="startDate">
+					{{.}}
+				</span>
+				{{/startDate}}
+				{{#endDate}}
+				<span class="endDate">
+					- {{.}}
+				</span>
+				{{else}}
+				<span class="endDate">
+					- Present
+				</span>
+				{{/endDate}}
 			</div>
-			{{/startDate}}
-			{{#endDate}}
-			<div class="endDate">
-				{{.}}
-			</div>
-			{{/endDate}}
 			{{#institution}}
 			<div class="institution">
 				{{.}}
@@ -177,6 +202,7 @@
 	{{/if}}
 	
 	{{#if resume.awards.length}}
+	<h2>Awards</h2>
 	<section id="awards">
 		{{#each resume.awards}}
 		<div class="item">
@@ -201,6 +227,7 @@
 	{{/if}}
 	
 	{{#if resume.publications.length}}
+	<h2>Publications</h2>
 	<section id="publications">
 		{{#each resume.publications}}
 		<div class="item">
@@ -221,7 +248,7 @@
 			{{/releaseDate}}
 			{{#website}}
 			<div class="website">
-				<a href="{{.}}">{{.}}</a>
+				<a href="{{.}}">Link</a>
 			</div>
 			{{/website}}
 		</div>
@@ -230,6 +257,7 @@
 	{{/if}}
 	
 	{{#if resume.skills.length}}
+	<h2>Skills</h2>
 	<section id="skills">
 		{{#each resume.skills}}
 		<div class="item">
@@ -256,13 +284,14 @@
 	{{/if}}
 	
 	{{#if resume.references.length}}
+	<h2>References</h2>
 	<section id="references">
 		{{#each resume.references}}
 		<div class="item">
 			{{#reference}}
-			<div class="reference">
+			<blockquote class="reference">
 				{{.}}
-			</div>
+			</blockquote>
 			{{/reference}}
 			{{#name}}
 			<div class="name">
@@ -273,6 +302,8 @@
 		{{/each}}
 	</section>
 	{{/if}}
+	
+	</div>
 	
 	</body>
 </html>
