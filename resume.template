@@ -18,6 +18,7 @@
 
 	{{#resume.basics}}
 	<h1>{{name}}</h1>
+	<h2>{{label}}</h2>
 	<section id="basics">
 		{{#email}}
 		<div class="email">
@@ -120,11 +121,68 @@
 					{{.}}
 				</span>
 				{{/startDate}}
-				{{#endDate}}
+				{{#if endDate}}
 				<span class="endDate">
+					- {{endDate}}
+				</span>
+				{{else}}
+				<span class="endDate">
+					- Present
+				</span>
+				{{/if}}
+			</div>
+			{{#position}}
+			<div class="position">
+				{{.}}
+			</div>
+			{{/position}}
+			{{#website}}
+			<div class="website">
+				<a href="{{.}}">{{.}}</a>
+			</div>
+			{{/website}}
+			{{#summary}}
+			<div class="summary">
+				<p>{{.}}</p>
+			</div>
+			{{/summary}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#highlights}}
+				<li>{{.}}</li>
+				{{/highlights}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
+	{{#if resume.volunteer.length}}
+	<h2>Volunteer</h2>
+	<section id="work">
+		{{#each resume.volunteer}}
+		<div class="item">
+			{{#organization}}
+			<h3 class="company">
+				{{.}}
+			</h3>
+			{{/organization}}
+			<div class="date">
+				{{#startDate}}
+				<span class="startDate">
 					{{.}}
 				</span>
-				{{/endDate}}
+				{{/startDate}}
+				{{#if endDate}}
+				<span class="endDate">
+					- {{endDate}}
+				</span>
+				{{else}}
+				<span class="endDate">
+					- Present
+				</span>
+				{{/if}}
 			</div>
 			{{#position}}
 			<div class="position">
@@ -164,15 +222,15 @@
 					{{.}}
 				</span>
 				{{/startDate}}
-				{{#endDate}}
+				{{#if endDate}}
 				<span class="endDate">
-					- {{.}}
+					- {{endDate}}
 				</span>
 				{{else}}
 				<span class="endDate">
 					- Present
 				</span>
-				{{/endDate}}
+				{{/if}}
 			</div>
 			{{#institution}}
 			<div class="institution">
@@ -189,6 +247,11 @@
 				{{.}}
 			</div>
 			{{/studyType}}
+			{{#gpa}}
+			<div class="gpa">
+				GPA: {{.}}
+			</div>
+			{{/gpa}}
 			{{#if courses.length}}
 			<ul class="courses">
 				{{#courses}}
@@ -221,6 +284,11 @@
 				{{.}}
 			</div>
 			{{/awarder}}
+			{{#summary}}
+			<div class="summary">
+				{{.}}
+			</div>
+			{{/summary}}
 		</div>
 		{{/each}}
 	</section>
@@ -251,6 +319,11 @@
 				<a href="{{.}}">Link</a>
 			</div>
 			{{/website}}
+			{{#summary}}
+			<div class="summary">
+				{{.}}
+			</div>
+			{{/summary}}
 		</div>
 		{{/each}}
 	</section>
@@ -271,6 +344,48 @@
 				{{.}}
 			</div>
 			{{/level}}
+			{{#if keywords.length}}
+			<ul class="keywords">
+				{{#keywords}}
+				<li>{{.}}</li>
+				{{/keywords}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
+	{{#if resume.languages.length}}
+	<h2>Languages</h2>
+	<section id="interests">
+		{{#each resume.languages}}
+		<div class="item">
+			{{#language}}
+			<div class="language">
+				{{.}}
+			</div>
+			{{/language}}
+			{{#fluency}}
+			<div class="fluency">
+				{{.}}
+			</div>
+			{{/fluency}}
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
+	{{#if resume.interests.length}}
+	<h2>Interests</h2>
+	<section id="interests">
+		{{#each resume.interests}}
+		<div class="item">
+			{{#name}}
+			<div class="name">
+				{{.}}
+			</div>
+			{{/name}}
 			{{#if keywords.length}}
 			<ul class="keywords">
 				{{#keywords}}
