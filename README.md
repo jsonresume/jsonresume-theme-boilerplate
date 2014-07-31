@@ -56,14 +56,15 @@ While inside the theme folder, simply run:
 resume serve
 ```
 
-If successful, you should now see this message:
+You should now see this message:
 
 ```
 Preview: http://localhost:4000
 Press ctrl-c to stop
 ```
 
-Congratulations, you've made it!  
+Congratulations, you've made it!
+
 __The theme development can now begin.__
 
 ## License
