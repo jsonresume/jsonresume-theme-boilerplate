@@ -7,7 +7,7 @@
 	
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
-	<style type="text/css">
+	<style>
 	{{{css}}}
 	</style>
 	
