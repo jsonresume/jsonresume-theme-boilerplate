@@ -67,7 +67,7 @@ __The theme development can now begin.__
 
 ### Overview
 
-Now that you have your boilerplate theme installed, take go through a quick overview at each of the files needed for your JSONResume theme:
+Now that you have your boilerplate theme installed, go through a quick overview of each of the files needed for your JSONResume theme:
 
 * `package.json`: Your package.json is required by all npm packages. Everytime you want to release a new update of your theme, you'll need to update it's version number.
 * `index.js`: This is the file that will return the needed HTML to the theme server. You can use it to process some things with your theme first, but we'll talk about that a bit later.
