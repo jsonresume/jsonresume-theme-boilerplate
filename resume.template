@@ -1,24 +1,24 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
+
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style>
 	{{{css}}}
 	</style>
-	
+
 	</head>
 	<body>
-	
-	<div id="resume">
+
+	<div id="resume" itemscope itemtype="http://schema.org/Person">
 
 	{{#resume.basics}}
-	<h1>{{name}}</h1>
-	<h2>{{label}}</h2>
+	<h1 itemprop="name">{{name}}</h1>
+	<h2 itemprop="jobTitle">{{label}}</h2>
 	<section id="basics">
 		<div class="contact">
 		{{#if website}}
@@ -42,7 +42,7 @@
 		</div>
 		{{#if summary}}
 		<div class="summary">
-			<p>{{summary}}</p>
+			<p itemprop="description">{{summary}}</p>
 		</div>
 		{{/if}}
 		{{#location}}
@@ -91,7 +91,7 @@
 				</strong>
 				{{/if}}
 				{{#if username}}
-				<div class="username">
+				<div class="username" itemprop="alternateName">
 					{{username}}
 				</div>
 				{{/if}}
@@ -111,9 +111,9 @@
 	<section id="work">
 		<h2>Work</h2>
 		{{#each resume.work}}
-		<div class="item">
+		<div class="item" itemscope itemtype="http://schema.org/Organization">
 			{{#if company}}
-			<h3 class="name">
+			<h3 class="name" itemprop="name">
 				{{company}}
 			</h3>
 			{{/if}}
@@ -140,11 +140,11 @@
 			{{/if}}
 			{{#if website}}
 			<div class="website">
-				<a href="{{website}}">{{website}}</a>
+				<a href="{{website}}" itemprop="url">{{website}}</a>
 			</div>
 			{{/if}}
 			{{#if summary}}
-			<div class="summary">
+			<div class="summary" itemprop="description">
 				<p>{{summary}}</p>
 			</div>
 			{{/if}}
@@ -164,9 +164,9 @@
 	<section id="volunteer">
 		<h2>Volunteer</h2>
 		{{#each resume.volunteer}}
-		<div class="item">
+		<div class="item" itemscope itemtype="http://schema.org/Organization">
 			{{#if organization}}
-			<h3 class="company">
+			<h3 class="company" itemprop="name">
 				{{organization}}
 			</h3>
 			{{/if}}
@@ -193,11 +193,11 @@
 			{{/if}}
 			{{#if website}}
 			<div class="website">
-				<a href="{{website}}">{{website}}</a>
+				<a href="{{website}}" itemprop="url">{{website}}</a>
 			</div>
 			{{/if}}
 			{{#if summary}}
-			<div class="summary">
+			<div class="summary" itemprop="description">
 				<p>{{summary}}</p>
 			</div>
 			{{/if}}
@@ -212,12 +212,12 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.education.length}}
 	<section id="education">
 		<h2>Education</h2>
 		{{#each resume.education}}
-		<div class="item">
+		<div class="item" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
 			<div class="date">
 				{{#if startDate}}
 				<span class="startDate">
@@ -235,7 +235,7 @@
 				{{/if}}
 			</div>
 			{{#if institution}}
-			<div class="institution">
+			<div class="institution" itemprop="name">
 				{{institution}}
 			</div>
 			{{/if}}
@@ -265,12 +265,12 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.awards.length}}
 	<section id="awards">
 		<h2>Awards</h2>
 		{{#each resume.awards}}
-		<div class="item">
+		<div class="item" itemprop="award">
 			{{#if title}}
 			<div class="title">
 				{{title}}
@@ -295,7 +295,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.publications.length}}
 	<section id="publications">
 		<h2>Publications</h2>
@@ -330,7 +330,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.skills.length}}
 	<section id="skills">
 		<h2>Skills</h2>
@@ -362,9 +362,9 @@
 	<section id="languages">
 		<h2>Languages</h2>
 		{{#each resume.languages}}
-		<div class="item">
+		<div class="item" itemscope itemtype="http://schema.org/Language">
 			{{#if language}}
-			<div class="language">
+			<div class="language" itemprop"=name">
 				{{language}}
 			</div>
 			{{/if}}
@@ -399,7 +399,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.references.length}}
 	<section id="references">
 		<h2>References</h2>
@@ -419,8 +419,8 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	</div>
-	
+
 	</body>
 </html>
