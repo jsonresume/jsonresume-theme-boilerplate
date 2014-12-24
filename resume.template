@@ -24,19 +24,19 @@
 		{{#if website}}
 		<div class="website">
 			<strong>Website</strong>
-			{{website}}
+			<span itemprop="url">{{website}}</span>
 		</div>
 		{{/if}}
 		{{#if email}}
 		<div class="email">
 			<strong>Email</strong>
-			{{email}}
+			<span itemprop="email">{{email}}</span>
 		</div>
 		{{/if}}
 		{{#if phone}}
 		<div class="phone">
 			<strong>Phone</strong>
-			{{phone}}
+			<span itemprop="telephone">{{phone}}</span>
 		</div>
 		{{/if}}
 		</div>
@@ -47,35 +47,35 @@
 		{{/if}}
 		{{#location}}
 		<h3>Location</h3>
-		<section id="location">
+		<section id="location" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			{{#if address}}
 			<div class="address">
 				<strong>Address</strong>
-				{{address}}
+				<span itemprop="streetAddress">{{address}}</span>
 			</div>
 			{{/if}}
 			{{#if postalCode}}
 			<div class="postalCode">
 				<strong>Postal code</strong>
-				{{postalCode}}
+				<span itemprop="postalCode">{{postalCode}}</span>
 			</div>
 			{{/if}}
 			{{#if city}}
 			<div class="city">
 				<strong>City</strong>
-				{{city}}
+				<span itemprop="addressLocality">{{city}}</span>
 			</div>
 			{{/if}}
 			{{#if countryCode}}
 			<div class="countryCode">
 				<strong>Country code</strong>
-				{{countryCode}}
+				<span itemprop="addressCountry">{{countryCode}}</span>
 			</div>
 			{{/if}}
 			{{#if region}}
 			<div class="region">
 				<strong>Region</strong>
-				{{region}}
+				<span itemprop="addressRegion">{{region}}</span>
 			</div>
 			{{/if}}
 		</section>
