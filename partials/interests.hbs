@@ -1,0 +1,21 @@
+{{#if resume.interests.length}}
+<section id="interests">
+	<h2>Interests</h2>
+	{{#each resume.interests}}
+	<div class="item">
+		{{#if name}}
+		<div class="name">
+			{{name}}
+		</div>
+		{{/if}}
+		{{#if keywords.length}}
+		<ul class="keywords">
+			{{#each keywords}}
+			<li>{{.}}</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	</div>
+	{{/each}}
+</section>
+{{/if}}
