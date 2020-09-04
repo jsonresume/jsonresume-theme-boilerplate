@@ -9,6 +9,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4"
+    "handlebars": "^4.7.6"
   }
 }
