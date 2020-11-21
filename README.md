@@ -49,7 +49,7 @@ This will read the local `package.json` and install the packages listed under `d
 While inside the theme folder, simply run:
 
 ```
-resume serve
+resume serve --theme .
 ```
 
 You should now see this message:
